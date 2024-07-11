@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block javas %}
+    <script src="/static/javas/computerjava.js"></script>
+{% endblock %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <br>
+    <div id="bm"><var>{{best_move}}</var></div>
+    <div class="center">My turn! I'll place my O in a blue cell.</div>
+    <br>
+    <div class="center">
+        <table class='outer'>
+            {% for outerrow in range(1,4) %}
+                <tr>
+                    {% for outercol in range(1,4) %}
+                        <td class="outgrid">
+                            {% set x = (3*(outerrow - 1) + outercol)|string %}
+
+                <!-- Check if this large cell has been won -->
+                            {%- if session['0'][x] in ['X','O'] %}
+                                <div class="bigcell"> {{session['0'][x]}} </div>
+
+                <!-- if not make a grid inside the cell -->
+                            {% else %}
+                                <table class='inner'>
+                                    {% for innerrow in range(1,4) %}
+                                        <tr>
+                                            {% for innercol in range(1,4) %}
+                                                {% set y = (3*(innerrow - 1) + innercol)|string %}
+
+                        <!-- check if this is a legal choice and if so make it blue -->
+                                                {% if session[x][y] == 'include' %}
+                                                    {% set i = 10*(3*(outerrow - 1) + outercol) + 3*(innerrow - 1) + innercol %}
+                                                    <td class="ingrid" style="background-color: SkyBlue;">
+                                                        <div class="cell" class="blue" id="{{i}}"> </div>
+                                                    </td>
+                                                {% else %}
+                                                    <td class="ingrid">
+                                                        <div class="cell"> {{session[x][y]}} </div>
+                                                    </td>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+
+
+{% endblock %}

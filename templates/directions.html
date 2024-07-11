@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Directions
+{% endblock %}
+
+{% block main %}
+    <div class="center">
+        <p>Meta Tic-Tac-Toe is also known as Ultimate Tic-Tac-Toe and Super Tic-Tac-Toe.</p>
+    </div>
+    <ul>
+        <li>It is a board game set up like regular tic-tac-toe but in each cell of the big grid there is a smaller tic-tac-toe grid.</li>
+        <li>X goes first. (In this game, that's you. The computer is O.)</li>
+        <li>The first X can go in any of the 81 cells. Where you place it determines the computer's options for the next move.</li>
+    </ul>
+    <div class="center">
+        <p>
+            <div class="picture1"><img src="/static/images/Turn1.png"></div>
+        </p>
+
+        <p>If you place an X in the bottom right cell in any of the small grids, the computer must choose one of the cells located in the bottom right large grid. (These will be marked in blue.)</p>
+        <div class="picture1"><img src="/static/images/Turn2.png"></div>
+
+        <p>Whichever cell the computer chooses will similarly determine your options for your next move.</p>
+
+        <div class="picture1"><img src="/static/images/Turn3.png"></div>
+
+        <p>If an X (or an O) makes 3-in-a-row in a small grid, that whole cell in the large grid is marked with an X (or O).</p>
+    </div>
+    <ul>
+        <li>Once a whole cell has been won, or is completely filled in a tie, no more moves can be played in that cell.</li>
+        <li>If that's the area your options are in, you may play instead in any unoccupied space. (All such spaces will be marked in blue.)</li>
+        <li>Whoever wins three large cells in a row wins the game!</li>
+    </ul>
+    </div>
+{% endblock %}

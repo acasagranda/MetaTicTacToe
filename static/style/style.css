@@ -1,0 +1,93 @@
+button {
+    height: 7vh;
+    /* set to 100% */
+    aspect-ratio: 1 / 1;
+    background-color: SkyBlue;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    border-style: hidden;
+}
+
+.blue {
+    background-color: SkyBlue;
+    color: SkyBlue;
+}
+
+.bigcell {
+    min-height: 24vh;
+    aspect-ratio: 1 / 1;
+    font-size: 21vh;
+    padding: 1.5px;
+    text-align: center;
+}
+
+#bm {
+    display: None;
+}
+
+.cell {
+    min-height: 7vh;
+    aspect-ratio: 1 / 1;
+    font-size: 6vh;
+    padding: 1.5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.center {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.ingrid {
+    border: 2px Black solid;
+}
+
+.inner {
+    height: 24vh;
+    aspect-ratio: 1 / 1;
+}
+
+.navlist {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #0055A8;
+    font-size: 20px;
+    text-align: center;
+    /* margin-bottom: 0; */
+}
+
+.navlistlink {
+    color: white;
+}
+
+.outgrid {
+    padding: .5 rem;
+    border: 5px Black solid;
+}
+
+.outer {
+    height: 72vh;
+    aspect-ratio: 1 / 1;
+}
+
+
+.picture1 {
+    width: 100%;
+    height: auto;
+    float: left;
+
+}
+
+.picture1 img {
+    width: 20%;
+    height: 20%;
+
+}
